@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
-import classNames from 'classnames';
 import './index.css';
 
 import Button from '../Button';
 import Loading from '../Loading';
+import Sort from '../Sort';
 
 import {
   DEFAULT_QUERY,
@@ -342,27 +342,6 @@ const withLoading = Component => ({ isLoading, ...rest }) => isLoading
     : <Component { ...rest } />
 
 const ButtonWithLoading = withLoading(Button);
-
-const Sort = ({
-  sortKey,
-  activeSortKey,
-  onSort,
-  children
-}) => {
-  const sortClass = classNames(
-    'button-inline',
-    { 'button-active': sortKey === activeSortKey }
-  );
-
-  return (
-    <Button
-      onClick={() => onSort(sortKey)}
-      className={sortClass}
-    >
-      {children}
-    </Button>
-  )
-}
 
 export default App;
 
