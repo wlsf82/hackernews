@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
 import classNames from 'classnames';
-import './App.css';
+import './index.css';
 
 import {
   DEFAULT_QUERY,
@@ -13,7 +13,7 @@ import {
   PARAM_SEARCH,
   PARAM_PAGE,
   PARAM_HPP,
-} from './constants';
+} from '../../constants';
 
 const SORTS = {
   NONE: list => list,
