@@ -111,16 +111,6 @@ exports[`App has a valid snapshot 1`] = `
 </div>
 `;
 
-exports[`Button has a valid snapshot 1`] = `
-<button
-  className=""
-  onClick={[Function]}
-  type="button"
->
-  Give Me More
-</button>
-`;
-
 exports[`Loading has a valid snapshot 1`] = `
 <div
   className="loading"

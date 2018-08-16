@@ -5,6 +5,8 @@ import { sortBy } from 'lodash';
 import classNames from 'classnames';
 import './index.css';
 
+import Button from '../Button';
+
 import {
   DEFAULT_QUERY,
   DEFAULT_HPP,
@@ -334,25 +336,6 @@ class Table extends Component {
     onDismiss: PropTypes.func.isRequired,
   };
 
-const Button = ({onClick, className, children}) =>
-  <button
-    onClick={onClick}
-    className={className}
-    type='button'
-  >
-    {children}
-  </button>
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
-Button.defaultProps = {
-  className: '',
-};
-
 const Loading = () => <div className='loading'>Loading ...</div>
 
 const withLoading = Component => ({ isLoading, ...rest }) => isLoading
@@ -385,7 +368,6 @@ const Sort = ({
 export default App;
 
 export {
-  Button,
   Search,
   Table,
   Loading,
