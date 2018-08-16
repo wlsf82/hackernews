@@ -111,23 +111,6 @@ exports[`App has a valid snapshot 1`] = `
 </div>
 `;
 
-exports[`Search has a valid snapshot 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <input
-    onChange={[Function]}
-    type="text"
-    value={undefined}
-  />
-  <button
-    type="submit"
-  >
-    Search
-  </button>
-</form>
-`;
-
 exports[`Table has a valid snapshot 1`] = `
 <div
   className="table"

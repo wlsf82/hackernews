@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App, { Search, Table } from './index';
+import App, { Table } from './index';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -18,40 +18,6 @@ describe('App', () => {
   test('has a valid snapshot', () => {
     const component = renderer.create(
       <App />
-    );
-    const tree = component.toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-});
-
-describe('Search', () =>{
-  const onChange = () => {};
-  const onSubmit = () => {};
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-
-    ReactDOM.render(
-      <Search
-        onChange={onChange}
-        onSubmit={onSubmit}
-      >
-        Search
-      </Search>,
-      div
-    );
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  test('has a valid snapshot', () => {
-    const component = renderer.create(
-      <Search
-        onChange={onChange}
-        onSubmit={onSubmit}
-      >
-        Search
-      </Search>
     );
     const tree = component.toJSON();
 
