@@ -5,7 +5,7 @@ import { sortBy } from 'lodash';
 import './index.css';
 
 import Button from '../Button';
-import Loading from '../Loading';
+import { withLoading } from '../Loading/withLoading';
 import Sort from '../Sort';
 
 import {
@@ -336,10 +336,6 @@ class Table extends Component {
     ).isRequired,
     onDismiss: PropTypes.func.isRequired,
   };
-
-const withLoading = Component => ({ isLoading, ...rest }) => isLoading
-    ? <Loading />
-    : <Component { ...rest } />
 
 const ButtonWithLoading = withLoading(Button);
 
