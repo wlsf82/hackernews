@@ -1,6 +1,6 @@
 # Hacker News
 
-From "The Road to learn React" book.
+From "[The Road to learn React](https://leanpub.com/the-road-to-learn-react)" book.
 
 ## Installation
 
