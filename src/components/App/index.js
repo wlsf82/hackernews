@@ -5,7 +5,7 @@ import { sortBy } from 'lodash';
 import './index.css';
 
 import Button from '../Button';
-import { withLoading } from '../Loading/withLoading';
+import { ButtonWithLoading } from '../Loading/ButtonWithLoading';
 import Sort from '../Sort';
 
 import {
@@ -336,8 +336,6 @@ class Table extends Component {
     ).isRequired,
     onDismiss: PropTypes.func.isRequired,
   };
-
-const ButtonWithLoading = withLoading(Button);
 
 export default App;
 
