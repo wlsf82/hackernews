@@ -158,10 +158,10 @@ class App extends Component {
           ? <div className='interactions'>
               <p>Something went wrong.</p>
             </div>
-            : <Table
-                list={list}
-                onDismiss={this.onDismiss}
-              />
+          : <Table
+              list={list}
+              onDismiss={this.onDismiss}
+            />
         }
         <div className='interactions'>
           <ButtonWithLoading
