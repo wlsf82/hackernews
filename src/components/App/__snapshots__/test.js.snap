@@ -111,14 +111,6 @@ exports[`App has a valid snapshot 1`] = `
 </div>
 `;
 
-exports[`Loading has a valid snapshot 1`] = `
-<div
-  className="loading"
->
-  Loading ...
-</div>
-`;
-
 exports[`Search has a valid snapshot 1`] = `
 <form
   onSubmit={[Function]}

@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import './index.css';
 
 import Button from '../Button';
+import Loading from '../Loading';
 
 import {
   DEFAULT_QUERY,
@@ -336,8 +337,6 @@ class Table extends Component {
     onDismiss: PropTypes.func.isRequired,
   };
 
-const Loading = () => <div className='loading'>Loading ...</div>
-
 const withLoading = Component => ({ isLoading, ...rest }) => isLoading
     ? <Loading />
     : <Component { ...rest } />
@@ -370,5 +369,4 @@ export default App;
 export {
   Search,
   Table,
-  Loading,
 };
