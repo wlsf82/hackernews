@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
+
 import './index.css';
 
 import Button from '../Button';
