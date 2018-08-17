@@ -37,3 +37,7 @@
   text-overflow: ellipsis;
   padding: 0 5px;
 }
+
+.table button:hover {
+  font-weight: bold;
+}
