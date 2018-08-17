@@ -24,4 +24,12 @@ describe('App', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('shows only one App', () => {
+    const element = shallow(
+      <App />
+    );
+
+    expect(element.find('.page').length).toBe(1);
+  });
 });
