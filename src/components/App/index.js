@@ -165,7 +165,7 @@ class App extends Component {
             />
         }
         { error
-          ? ''
+          ? undefined
           : <div className='interactions'>
             <ButtonWithLoading
               isLoading={isLoading}
