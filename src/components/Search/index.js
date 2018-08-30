@@ -19,6 +19,7 @@ class Search extends Component {
     return (
       <form onSubmit={onSubmit}>
         <input
+          aria-label='Search term input text field'
           type='text'
           value={value}
           onChange={onChange}
