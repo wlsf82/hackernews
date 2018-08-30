@@ -5,6 +5,7 @@ exports[`Search has a valid snapshot 1`] = `
   onSubmit={[Function]}
 >
   <input
+    aria-label="Search term input text field"
     onChange={[Function]}
     type="text"
     value={undefined}
