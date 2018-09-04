@@ -15,11 +15,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:e2e": "webdriver-manager update && protractor __tests__/conf.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.2.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.4.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.2"
   }
