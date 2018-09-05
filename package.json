@@ -23,6 +23,7 @@
     "enzyme-adapter-react-16": "^1.2.0",
     "jasmine-spec-reporter": "^4.2.1",
     "protractor": "^5.4.0",
+    "protractor-helper": "^3.4.3",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.2"
   }
