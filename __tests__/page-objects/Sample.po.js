@@ -1,7 +1,7 @@
-const InteractionsFromBottom = require('../components/InteractionsFromBottom.js');
-const InteractionsFromTop = require('../components/InteractionsFromTop.js');
-const Loading = require('../components/Loading.js');
-const Table = require('../components/Table.js');
+const InteractionsFromBottom = require('../components/InteractionsFromBottom');
+const InteractionsFromTop = require('../components/InteractionsFromTop');
+const Loading = require('../components/Loading');
+const Table = require('../components/Table');
 
 class Page {
   constructor() {

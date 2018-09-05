@@ -1,6 +1,6 @@
 const helper = require('protractor-helper');
 
-const Page = require('../page-objects/Sample.po.js');
+const Page = require('../page-objects/Sample.po');
 
 describe('Hackernews kind off app', () => {
   const page = new Page();
