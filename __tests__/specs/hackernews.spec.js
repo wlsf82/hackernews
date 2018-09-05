@@ -5,57 +5,57 @@ const Page = require('../page-objects/Sample.po.js');
 describe('Hackernews kind off app', () => {
   const page = new Page();
 
-  beforeEach(() => browser.get('/'));
+  beforeEach(() => browser.get(page.relativeUrl));
 
   it('renders 100 items in the first visit', () => {
-    helper.waitForElementVisibility(page.tableElements.last());
-    expect(page.tableElements.count()).toBe(100);
+    helper.waitForElementVisibility(page.table.items.last());
+    expect(page.table.items.count()).toBe(100);
   });
 
   it('quickly shows a loading component when clicking the More button', () => {
-    helper.clickWhenClickable(page.moreButton);
+    helper.clickWhenClickable(page.interactionsFromBottom.moreButton);
 
-    helper.waitForElementVisibility(page.loadingElement);
+    helper.waitForElementVisibility(page.loading.ellipsis);
   });
 
   it('renders 200 items after clicking the More button', () => {
-    helper.clickWhenClickable(page.moreButton);
-    helper.waitForElementVisibility(page.loadingElement);
-    helper.waitForElementNotToBePresent(page.loadingElement);
+    helper.clickWhenClickable(page.interactionsFromBottom.moreButton);
+    helper.waitForElementVisibility(page.loading.ellipsis);
+    helper.waitForElementNotToBePresent(page.loading.ellipsis);
 
-    helper.waitForElementVisibility(page.tableElements.last())
-    expect(page.tableElements.count()).toBe(200);
+    helper.waitForElementVisibility(page.table.items.last());
+    expect(page.table.items.count()).toBe(200);
   });
 
   it('quickly shows a loading component when searching for the word "react" for the first time', () => {
-    page.searchForTermAfterClearingTheField('react');
+    page.interactionsFromTop.searchForTermAfterClearingTheField('react');
 
-    helper.waitForElementVisibility(page.loadingElement);
+    helper.waitForElementVisibility(page.loading.ellipsis);
   });
 
   it('renders 100 items after searching for the word "react" for the first time', () => {
-    page.searchForTermAfterClearingTheField('react');
+    page.interactionsFromTop.searchForTermAfterClearingTheField('react');
 
-    helper.waitForElementVisibility(page.loadingElement);
-    helper.waitForElementNotToBePresent(page.loadingElement);
+    helper.waitForElementVisibility(page.loading.ellipsis);
+    helper.waitForElementNotToBePresent(page.loading.ellipsis);
 
-    expect(page.tableElements.count()).toBe(100);
+    expect(page.table.items.count()).toBe(100);
   });
 
   it('does not renders a loading component after searching for "react" and then "redux" again', () => {
-    page.searchForTermAfterClearingTheField('react');
+    page.interactionsFromTop.searchForTermAfterClearingTheField('react');
 
-    helper.waitForElementVisibility(page.loadingElement);
-    helper.waitForElementNotToBePresent(page.loadingElement);
+    helper.waitForElementVisibility(page.loading.ellipsis);
+    helper.waitForElementNotToBePresent(page.loading.ellipsis);
 
-    page.searchForTermAfterClearingTheField('redux');
+    page.interactionsFromTop.searchForTermAfterClearingTheField('redux');
 
-    helper.waitForElementNotToBePresent(page.loadingElement);
+    helper.waitForElementNotToBePresent(page.loading.ellipsis);
   });
 
   it('shows only 99 items after dismissing one item', () => {
-    helper.clickWhenClickable(page.dismissButtonOfFirstItem);
+    helper.clickWhenClickable(page.table.dismissButtonOfFirstItem);
 
-    expect(page.tableElements.count()).toBe(99);
+    expect(page.table.items.count()).toBe(99);
   });
 });
