@@ -28,13 +28,13 @@ describe('Hackernews kind off app', () => {
   });
 
   it('quickly shows a loading component when searching for the word "react" for the first time', () => {
-    page.searchForTerm('react');
+    page.searchForTermAfterClearingTheField('react');
 
     helper.waitForElementVisibility(page.loadingElement);
   });
 
   it('renders 100 items after searching for the word "react" for the first time', () => {
-    page.searchForTerm('react');
+    page.searchForTermAfterClearingTheField('react');
 
     helper.waitForElementVisibility(page.loadingElement);
     helper.waitForElementNotToBePresent(page.loadingElement);
@@ -43,12 +43,12 @@ describe('Hackernews kind off app', () => {
   });
 
   it('does not renders a loading component after searching for "react" and then "redux" again', () => {
-    page.searchForTerm('react');
+    page.searchForTermAfterClearingTheField('react');
 
     helper.waitForElementVisibility(page.loadingElement);
     helper.waitForElementNotToBePresent(page.loadingElement);
 
-    page.searchForTerm('redux');
+    page.searchForTermAfterClearingTheField('redux');
 
     helper.waitForElementNotToBePresent(page.loadingElement);
   });
