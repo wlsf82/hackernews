@@ -5724,6 +5724,10 @@ prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+protractor-helper@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/protractor-helper/-/protractor-helper-3.4.3.tgz#5000eaf743ba54a22bf3cacc25ebf3065097cc69"
+
 protractor@^5.4.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/protractor/-/protractor-5.4.0.tgz#e71c9c1f5cf6c5e9bdbcdb71e7f31b17ffd2878f"
