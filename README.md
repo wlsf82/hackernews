@@ -14,4 +14,8 @@ Run `yarn start` to start the application.
 
 ## Running tests
 
-Run `yarn test` to run the automated tests.
+Run `yarn test` to run the automated unit tests.
+
+And run `yarn run test:e2e` to run the end-to-end (e2e) tests.
+
+> The e2e tests are executed against a remote environment, so the application needs to be deployed to this environment prior to running them.
