@@ -57,4 +57,8 @@ describe('Hackernews kind off app', () => {
       helper.waitForElementNotToBePresent(page.loading.ellipsis);
     });
   });
+
+  describe('Sorting', () => {
+    it('sorts correctly by the title column', () => {});
+  });
 });
