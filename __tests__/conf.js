@@ -1,7 +1,7 @@
 const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
 module.exports.config = {
-  baseUrl: 'http://infinite-savannah-93746.herokuapp.com',
+  baseUrl: 'http://localhost:3000',
   specs: ['./specs/*.spec.js'],
   capabilities: {
     browserName: 'chrome',

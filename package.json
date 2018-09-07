@@ -13,9 +13,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-server": "npm start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:e2e": "webdriver-manager update && protractor __tests__/conf.js",
+    "ci": "start-server-and-test start-server http://localhost:3000 test:e2e",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "protractor": "^5.4.0",
     "protractor-helper": "^3.4.3",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.4.2",
+    "start-server-and-test": "^1.7.1"
   }
 }
