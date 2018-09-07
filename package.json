@@ -16,7 +16,7 @@
     "start-server": "npm start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:e2e": "webdriver-manager update && protractor __tests__/conf.js",
+    "test:e2e": "webdriver-manager update && protractor __tests__/protractor/conf.js",
     "ci": "start-server-and-test start-server http://localhost:3000 test:e2e",
     "eject": "react-scripts eject"
   },
