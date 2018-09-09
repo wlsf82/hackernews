@@ -15,7 +15,14 @@ Run `yarn start` to start the application.
 ## Running tests
 
 Run `yarn test` to run the automated unit tests.
+Run `yarn run test:e2e:cypress` to run the Cypress end-to-end tests.
+Run `yarn run test:e2e:protractor` to run the Protractor end-to-end (e2e) tests.
 
-And run `yarn run test:e2e` to run the end-to-end (e2e) tests.
+> Note: local server need to be up and running.
 
-> The e2e tests are executed against a remote environment, so the application needs to be deployed to this environment prior to running them.
+### Running end-to-end tests on CI
+
+Run `yarn run ci:cypress` to run the Cypress end-to-end tests on CI mode.
+Run `yarn run ci:protractor` to run the Protractor end-to-end tests on CI mode.
+
+> Here CI mode means that a local server will be automatically started before the tests run, and the server will be automatically shut down when the tests are finished.
