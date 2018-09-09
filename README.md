@@ -18,7 +18,7 @@ Run `yarn test` to run the automated unit tests.
 
 Run `yarn run test:e2e:cypress` to run the Cypress end-to-end tests.
 
-Run `yarn run test:e2e:protractor` to run the Protractor end-to-end (e2e) tests.
+Run `yarn run test:e2e:protractor` to run the Protractor end-to-end tests.
 
 > Note: local server need to be up and running.
 
