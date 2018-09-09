@@ -21,6 +21,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "cypress": "^3.1.0",
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.2.0",
     "jasmine-spec-reporter": "^4.2.1",
