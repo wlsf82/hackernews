@@ -1,7 +1,8 @@
 {
-  "integrationFolder": "__tests__/cypress/integration",
   "baseUrl": "http://localhost:3000",
-  "videosFolder": "__tests__/cypress/videos",
+  "integrationFolder": "__tests__/cypress/integration",
   "pluginsFile": "__tests__/cypress/plugins",
-  "supportFile": "__tests__/cypress/support"
+  "supportFile": "__tests__/cypress/support",
+  "videosFolder": "__tests__/cypress/videos",
+  "video": false
 }
