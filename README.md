@@ -20,7 +20,7 @@ Run `yarn run test:e2e:cypress` to run the Cypress end-to-end tests.
 
 Run `yarn run test:e2e:protractor` to run the Protractor end-to-end tests.
 
-> Note: local server need to be up and running.
+> Note: local server needs to be up and running.
 
 ### Running end-to-end tests on CI
 
