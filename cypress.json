@@ -1,9 +1,10 @@
 {
   "baseUrl": "http://localhost:3000",
   "integrationFolder": "__tests__/cypress/integration",
-  "pluginsFile": "__tests__/cypress/plugins",
+  "fixturesFolder": "__tests__/cypress/fixtures",
+  "pluginsFile": "__tests__/cypress/plugins/index.js",
   "screenshotsFolder": "__tests__/cypress/screenshots",
-  "supportFile": "__tests__/cypress/support",
+  "supportFile": "__tests__/cypress/support/index.js",
   "videosFolder": "__tests__/cypress/videos",
   "video": false
 }
