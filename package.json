@@ -17,9 +17,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:e2e:protractor": "webdriver-manager update && protractor __tests__/protractor/conf.js",
-    "ci:protractor": "start-server-and-test start-server http://localhost:3000 test:e2e:protractor",
+    "ci:protractor": "server-test 3000 test:e2e:protractor",
     "test:e2e:cypress": "cypress run",
-    "ci:cypress": "start-server-and-test start-server http://localhost:3000 test:e2e:cypress",
+    "ci:cypress": "server-test 3000 test:e2e:cypress",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
