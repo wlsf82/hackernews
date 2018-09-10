@@ -20,5 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-__tests__/cypress/videos
 __tests__/cypress/_integration
+__tests__/cypress/screenshots
+__tests__/cypress/videos
