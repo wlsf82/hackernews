@@ -18,14 +18,14 @@ describe("Hackernews fake app", () => {
   it("renders 100 items after searching for 'react'", () => {
     cy.get(".interactions input[type='text']")
       .clear()
-      .wait(2000) // Why?
+      .wait(2000) // @TODO: Figure out a way to make it work without this wait.
       .type("react{enter}");
   });
 
-  it("renders 0 items after searching for 'akstuzumbazumbaie'", () => {
+  it("renders 0 items when searching for an unknown term (e.g. 'akstuzumbazumbaie')", () => {
     cy.get(".interactions input[type='text']")
       .clear()
-      .wait(2000) // Why?
+      .wait(2000) // @TODO: Figure out a way to make it work without this wait.
       .type("akstuzumbazumbaie{enter}");
   });
 
