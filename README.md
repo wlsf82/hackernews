@@ -29,3 +29,9 @@ Run `yarn run ci:cypress` to run the Cypress end-to-end tests on CI mode.
 Run `yarn run ci:protractor` to run the Protractor end-to-end tests on CI mode.
 
 > Here CI mode means that a local server will be automatically started before the tests run, and the server will be automatically shut down when the tests are finished.
+
+## Build status
+
+The build status based on execution of unit and end-to-end tests can be found below.
+
+[![Build Status](https://semaphoreci.com/api/v1/wlsf82/hackernews/branches/master/badge.svg)](https://semaphoreci.com/wlsf82/hackernews)
