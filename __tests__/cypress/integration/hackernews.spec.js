@@ -20,6 +20,7 @@ describe("Hackernews fake app", () => {
       .clear()
       .wait(2000) // @TODO: Figure out a way to make it work without this wait.
       .type("react{enter}");
+    cy.get(".table-row").should("have.length", 100);
   });
 
   it("renders 0 items when searching for an unknown term (e.g. 'akstuzumbazumbaie')", () => {
@@ -27,6 +28,7 @@ describe("Hackernews fake app", () => {
       .clear()
       .wait(2000) // @TODO: Figure out a way to make it work without this wait.
       .type("akstuzumbazumbaie{enter}");
+    cy.get(".table-row").should("have.length", 0);
   });
 
   it("first became last and last become first when sorting", () => {
