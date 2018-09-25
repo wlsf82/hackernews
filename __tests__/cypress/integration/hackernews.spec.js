@@ -28,6 +28,7 @@ describe("Hackernews fake app", () => {
       .clear()
       .wait(2000) // @TODO: Figure out a way to make it work without this wait.
       .type("akstuzumbazumbaie{enter}");
+    cy.get('.loading').should('not.be.visible');
     cy.get(".table-row").should("have.length", 0);
   });
 
