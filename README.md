@@ -2,6 +2,8 @@
 
 From "[The Road to learn React](https://leanpub.com/the-road-to-learn-react)" book.
 
+Here's the link for the app in "production" https://infinite-savannah-93746.herokuapp.com.
+
 ## Installation
 
 Run `yarn install` to install de project and dev dependencies.
