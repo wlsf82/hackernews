@@ -2,13 +2,11 @@
 
 # dependencies
 /node_modules
-package-lock.json
 
 # testing
 /coverage
-__tests__/cypress/_integration
-__tests__/cypress/screenshots
-__tests__/cypress/videos
+/cypress/screenshots
+/cypress/videos
 
 # production
 /build

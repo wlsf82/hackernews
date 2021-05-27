@@ -1,36 +1,37 @@
 {
   "name": "hackernews",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.21.1",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "lodash": "^4.17.21",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-server": "npm start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "test:e2e:protractor": "webdriver-manager update && protractor __tests__/protractor/conf.js",
-    "ci:protractor": "server-test 3000 test:e2e:protractor",
-    "test:e2e:cypress": "cypress run",
-    "ci:cypress": "server-test 3000 test:e2e:cypress",
-    "eject": "react-scripts eject"
+    "test": "cypress run-ct",
+    "test:open-ct": "cypress open-ct"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "cypress": "^3.1.0",
-    "enzyme": "^3.4.1",
-    "enzyme-adapter-react-16": "^1.2.0",
-    "jasmine-spec-reporter": "^4.2.1",
-    "protractor": "^5.4.0",
-    "protractor-helper": "^3.4.3",
-    "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.4.2",
-    "start-server-and-test": "^1.7.1"
+    "@cypress/react": "^5.8.1",
+    "@cypress/webpack-dev-server": "^1.3.1",
+    "cypress": "^7.4.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
