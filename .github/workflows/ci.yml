@@ -13,4 +13,4 @@ jobs:
       - name: Run Component tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          command: yarn cypress run-ct
+          command: npm run cypress run-ct
