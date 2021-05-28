@@ -10,13 +10,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run E2E tests 🧪
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run e2e:ci
-
       - name: Run Component tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          install: false
           command: npm run ct
+
+      - name: Run E2E tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          command: npm run e2e:ci
