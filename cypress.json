@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://infinite-savannah-93746.herokuapp.com",
   "component": {
     "componentFolder": "src",
     "testFiles": "**/*spec.{js,jsx,ts,tsx}",

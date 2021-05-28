@@ -13,8 +13,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run-ct",
-    "test:open-ct": "cypress open-ct"
+    "test": "npm run e2e && npm run ct",
+    "e2e": "cypress run",
+    "ct": "cypress run-ct",
+    "cy:open": "cypress open",
+    "cy:open-ct": "cypress open-ct"
   },
   "browserslist": {
     "production": [
