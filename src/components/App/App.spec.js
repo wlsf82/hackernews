@@ -31,12 +31,15 @@ describe('App', () => {
     })
 
     it('dismisses one item', () => {
+      cy.percySnapshot('Initial state')
       cy.get('button')
         .contains('Dismiss')
         .click()
 
       cy.get('.table-row')
         .should('have.length', stories.list.length - 1)
+
+      cy.percySnapshot('One story less')
     })
 
     it('loads more items', () => {
@@ -46,6 +49,8 @@ describe('App', () => {
 
       cy.get('.table-row')
         .should('have.length', stories.list.length * 2)
+
+      cy.percySnapshot('Loaded more')
     })
   })
 
@@ -68,6 +73,8 @@ describe('App', () => {
       cy.get('p')
         .contains('Something went wrong.')
         .should('be.visible')
+
+      cy.percySnapshot('Fallback component')
     })
   })
 })
