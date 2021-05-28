@@ -16,8 +16,14 @@ Run `npm install` to install de project and dev dependencies.
 
 Run `npm start` to start the application.
 
-> After starting the app, it should be automatically opened in the default browser.
+> The app is automatically opened on the default browser on startup.
 
-## Running tests
+## Running the tests
 
 Run `npm test` to run the automated tests.
+
+> The above command starts the app, runs the tests against it, and shuts it down.
+
+___
+
+Made with ❤️ by [Walmyr](https://walmyr.dev).
