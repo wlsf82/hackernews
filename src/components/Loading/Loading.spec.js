@@ -7,6 +7,8 @@ describe('Loading component', () => {
   it('renders', () => {
     mount(<Loading />)
 
-    cy.get('div').contains('Loading ...').should('be.visible')
+    cy.get('div')
+      .contains('Loading ...')
+      .should('be.visible')
   })
 })

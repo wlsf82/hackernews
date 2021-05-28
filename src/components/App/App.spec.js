@@ -6,24 +6,28 @@ import App from './'
 describe('App', () => {
   context('Happy path', () => {
     const stories = require('../../../cypress/fixtures/stories')
+    const responseBody = {
+      hits: [
+        stories.list[0],
+        stories.list[1]
+      ]
+    }
 
     beforeEach(() => {
       cy.intercept(
         'GET',
         '**/search**',
-        {
-          body: {
-            hits: [
-              stories.list[0],
-              stories.list[1]
-            ]
-          }
-        }
+        { body: responseBody }
       )
 
       mount(<App />)
 
-      cy.get('.table-row').should('have.length', stories.list.length)
+      cy.get('input[type="text"]')
+        .should('be.visible')
+        .blur()
+
+      cy.get('.table-row')
+        .should('have.length', stories.list.length)
     })
 
     it('dismisses one item', () => {
@@ -31,7 +35,8 @@ describe('App', () => {
         .contains('Dismiss')
         .click()
 
-      cy.get('.table-row').should('have.length', stories.list.length - 1)
+      cy.get('.table-row')
+        .should('have.length', stories.list.length - 1)
     })
 
     it('loads more items', () => {
@@ -39,7 +44,8 @@ describe('App', () => {
         .contains('More')
         .click()
 
-      cy.get('.table-row').should('have.length', stories.list.length * 2)
+      cy.get('.table-row')
+        .should('have.length', stories.list.length * 2)
     })
   })
 
@@ -54,6 +60,10 @@ describe('App', () => {
 
     it('fallsback on a network failure', () => {
       mount(<App />)
+
+      cy.get('input[type="text"]')
+        .should('be.visible')
+        .blur()
 
       cy.get('p')
         .contains('Something went wrong.')

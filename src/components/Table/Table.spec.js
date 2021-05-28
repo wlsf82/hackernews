@@ -11,7 +11,8 @@ describe('Table component', () => {
 
     mount(<Table {...props} />)
 
-    cy.get('.table-row').should('not.exist')
+    cy.get('.table-row')
+      .should('not.exist')
   })
 
   it('renders with some items', () => {
@@ -19,7 +20,8 @@ describe('Table component', () => {
 
     mount(<Table {...props} />)
 
-    cy.get('.table-row').should('have.length', props.list.length)
+    cy.get('.table-row')
+      .should('have.length', props.list.length)
   })
 
   it('orders by points', () => {
@@ -27,7 +29,6 @@ describe('Table component', () => {
 
     mount(<Table {...props} />)
 
-    cy.get('.table-row').should('have.length', props.list.length)
     cy.get('.table-row')
       .first()
       .should('contain', props.list[0].points)
@@ -38,6 +39,7 @@ describe('Table component', () => {
     cy.get('span button')
       .contains('Points')
       .as('pointsHeader')
+      .should('not.have.class', 'button-active')
       .click()
       .should('have.class', 'button-active')
 
@@ -49,7 +51,7 @@ describe('Table component', () => {
       .should('contain', props.list[0].points)
 
     cy.get('@pointsHeader')
-        .click()
+      .click()
 
     cy.get('.table-row')
       .first()

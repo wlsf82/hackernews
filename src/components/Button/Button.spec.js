@@ -11,7 +11,8 @@ describe('Button component', () => {
       </Button>
     )
 
-    cy.get('button').should('have.class', 'my-awesome-button')
+    cy.get('button')
+      .should('have.class', 'my-awesome-button')
   })
 
   it('renders as an inline button', () => {
@@ -21,6 +22,7 @@ describe('Button component', () => {
       </Button>
     )
 
-    cy.get('button').should('have.class', 'button-inline')
+    cy.get('button')
+      .should('have.class', 'button-inline')
   })
 })
