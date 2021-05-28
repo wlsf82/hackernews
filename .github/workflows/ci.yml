@@ -13,7 +13,7 @@ jobs:
       - name: Run E2E tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          command: npm run e2e
+          command: npm run e2e:ci
 
       - name: Run Component tests 🧪
         uses: cypress-io/github-action@v2
