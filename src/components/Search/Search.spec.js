@@ -18,7 +18,7 @@ describe('Search component', () => {
       .contains('Search')
       .should('be.visible')
 
-    cy.percySnapshot(this.test.title)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 
   it('renders with value and Search button', () => {

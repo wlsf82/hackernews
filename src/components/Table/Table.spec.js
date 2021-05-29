@@ -4,7 +4,7 @@ import { mount } from '@cypress/react'
 import Table from './'
 
 describe('Table component', () => {
-  it('renders empty', () => {
+  it('renders empty', { tags: '@visual' }, () => {
     const props = {
       list: []
     }
@@ -13,6 +13,8 @@ describe('Table component', () => {
 
     cy.get('.table-row')
       .should('not.exist')
+
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 
   it('renders with some items', () => {
@@ -36,7 +38,7 @@ describe('Table component', () => {
       .last()
       .should('contain', props.list[1].points)
 
-    cy.percySnapshot(`${this.test.title} - before`)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - before`)
 
     cy.get('span button')
       .contains('Points')
@@ -45,7 +47,7 @@ describe('Table component', () => {
       .click()
       .should('have.class', 'button-active')
 
-    cy.percySnapshot(`${this.test.title} - order desc`)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - order desc`)
 
     cy.get('.table-row')
       .first()
@@ -64,6 +66,6 @@ describe('Table component', () => {
       .last()
       .should('contain', props.list[1].points)
 
-    cy.percySnapshot(`${this.test.title} - order asc`)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - order asc`)
   })
 })

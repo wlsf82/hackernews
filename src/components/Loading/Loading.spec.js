@@ -11,6 +11,6 @@ describe('Loading component', () => {
       .contains('Loading ...')
       .should('be.visible')
 
-    cy.percySnapshot(this.test.title)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 })

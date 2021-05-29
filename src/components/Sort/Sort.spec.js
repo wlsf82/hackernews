@@ -27,6 +27,6 @@ describe('Sort component', () => {
     cy.get('button')
       .should('have.class','button-active')
 
-    cy.percySnapshot(this.test.title)
+    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 })
