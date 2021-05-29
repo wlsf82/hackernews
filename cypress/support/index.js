@@ -1,3 +1,4 @@
+require('cypress-grep')()
 import '@percy/cypress'
 // ***********************************************************
 // This example support/index.js is processed and

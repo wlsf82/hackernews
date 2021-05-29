@@ -30,7 +30,7 @@ describe('App', () => {
         .should('have.length', stories.list.length)
     })
 
-    it('dismisses one item', () => {
+    it('dismisses one item', { tags: '@visual' }, () => {
       cy.percySnapshot('Initial state')
       cy.get('button')
         .contains('Dismiss')
@@ -42,7 +42,7 @@ describe('App', () => {
       cy.percySnapshot('One story less')
     })
 
-    it('loads more items', () => {
+    it('loads more items', { tags: '@visual' }, () => {
       cy.get('button')
         .contains('More')
         .click()
@@ -63,7 +63,7 @@ describe('App', () => {
       )
     })
 
-    it('fallsback on a network failure', () => {
+    it('fallsback on a network failure', { tags: '@visual' }, () => {
       mount(<App />)
 
       cy.get('input[type="text"]')
