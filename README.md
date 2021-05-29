@@ -4,7 +4,7 @@
 
 From "[The Road to learn React](https://leanpub.com/the-road-to-learn-react)" book.
 
-Here's the link of the app in "production" https://infinite-savannah-93746.herokuapp.com.
+Here's the link of the app in "production" https://hackernews-seven.vercel.app.
 
 > I've also written a similar app in TypeScript, and you can find it through the follwing URL https://github.com/wlsf82/hacker-stories.
 
