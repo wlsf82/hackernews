@@ -4,7 +4,7 @@ import { mount } from '@cypress/react'
 import Table from './'
 
 describe('Table component', () => {
-  it('renders empty', { tags: '@visual' }, () => {
+  it('renders empty', { tags: '@visual' }, function() {
     const props = {
       list: []
     }
