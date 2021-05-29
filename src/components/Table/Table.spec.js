@@ -6,6 +6,8 @@ import Table from './'
 describe('Table component', () => {
   it('renders empty', { tags: '@visual' }, function() {
     const props = {
+      onClick: cy.stub().as('onClickHandler'),
+      onDismiss: cy.stub().as('onDismissHandler'),
       list: []
     }
 
@@ -17,55 +19,63 @@ describe('Table component', () => {
     cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 
-  it('renders with some items', () => {
-    const props = require('../../../cypress/fixtures/stories')
+  context('Not empty', () => {
+    let props
 
-    mount(<Table {...props} />)
+    beforeEach(() => {
+      props = {
+        onClick: cy.stub().as('onClickHandler'),
+        onDismiss: cy.stub().as('onDismissHandler'),
+        ...require('../../../cypress/fixtures/stories')
+      }
 
-    cy.get('.table-row')
-      .should('have.length', props.list.length)
-  })
+      mount(<Table {...props} />)
+    })
 
-  it.only('orders by points', { tags: '@visual' }, function() {
-    const props = require('../../../cypress/fixtures/stories')
+    it('renders with some items', () => {
+      cy.get('.table-row')
+        .should('have.length', props.list.length)
+    })
 
-    mount(<Table {...props} />)
+    it('orders by points', { tags: '@visual' }, function() {
+      mount(<Table {...props} />)
 
-    cy.get('.table-row')
-      .first()
-      .should('contain', props.list[0].points)
-    cy.get('.table-row')
-      .last()
-      .should('contain', props.list[1].points)
+      cy.get('.table-row')
+        .first()
+        .should('contain', props.list[0].points)
+      cy.get('.table-row')
+        .last()
+        .should('contain', props.list[1].points)
 
-    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - before`)
+      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - before`)
 
-    cy.get('span button')
-      .contains('Points')
-      .as('pointsHeader')
-      .should('not.have.class', 'button-active')
-      .click()
-      .should('have.class', 'button-active')
+      cy.get('span button')
+        .contains('Points')
+        .as('pointsHeader')
+        .should('not.have.class', 'button-active')
+        .click()
+        .should('have.class', 'button-active')
 
-    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - order desc`)
+      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - order desc`)
 
-    cy.get('.table-row')
-      .first()
-      .should('contain', props.list[1].points)
-    cy.get('.table-row')
-      .last()
-      .should('contain', props.list[0].points)
+      cy.get('.table-row')
+        .first()
+        .should('contain', props.list[1].points)
+      cy.get('.table-row')
+        .last()
+        .should('contain', props.list[0].points)
 
-    cy.get('@pointsHeader')
-      .click()
+      cy.get('@pointsHeader')
+        .click()
 
-    cy.get('.table-row')
-      .first()
-      .should('contain', props.list[0].points)
-    cy.get('.table-row')
-      .last()
-      .should('contain', props.list[1].points)
+      cy.get('.table-row')
+        .first()
+        .should('contain', props.list[0].points)
+      cy.get('.table-row')
+        .last()
+        .should('contain', props.list[1].points)
 
-    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title} - order asc`)
+      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - order asc`)
+    })
   })
 })

@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "objectID": "2",
+      "title": "The Goal",
+      "author": "Eliyahu M. Goldratt",
+      "url": "https://example.com/eg"
+    },
+    {
+      "objectID": "3",
+      "title": "The Clean Coder",
+      "author": "Robert C. Martin",
+      "url": "https://example.com/rm2"
+    },
+    {
+      "objectID": "4",
+      "title": "Clean Architecture",
+      "author": "Robert C. Martin",
+      "url": "https://example.com/rm3"
+    }
+  ]
+}

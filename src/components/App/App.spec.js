@@ -6,18 +6,32 @@ import App from './'
 describe('App', () => {
   context('Happy path', () => {
     const stories = require('../../../cypress/fixtures/stories')
-    const responseBody = {
+    const incomplete = require('../../../cypress/fixtures/incomplete')
+    const pageOneResBody = {
       hits: [
         stories.list[0],
         stories.list[1]
+      ]
+    }
+    const pageTwoResBody = {
+      hits: [
+        incomplete.list[0],
+        incomplete.list[1],
+        incomplete.list[2]
       ]
     }
 
     beforeEach(() => {
       cy.intercept(
         'GET',
-        '**/search**',
-        { body: responseBody }
+        '**/search?query=redux&page=0&hitsPerPage=100',
+        { body: pageOneResBody }
+      )
+
+      cy.intercept(
+        'GET',
+        '**/search?query=redux&page=1&hitsPerPage=100',
+        { body: pageTwoResBody }
       )
 
       mount(<App />)
@@ -47,7 +61,7 @@ describe('App', () => {
         .click()
 
       cy.get('.table-row')
-        .should('have.length', stories.list.length * 2)
+        .should('have.length', stories.list.length + incomplete.list.length)
 
       cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
     })

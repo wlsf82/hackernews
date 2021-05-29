@@ -4,8 +4,17 @@ import { mount } from '@cypress/react'
 import Search from './'
 
 describe('Search component', () => {
+  let defaultProps
+
+  beforeEach(() => {
+    defaultProps = {
+      onChange: cy.stub().as('onChangeHandler'),
+      onSubmit: cy.stub().as('onSubmitHandler')
+    }
+  })
+
   it('renders with a Search button', { tags: '@visual' }, function() {
-    mount(<Search>Search</Search>)
+    mount(<Search {...defaultProps}>Search</Search>)
 
     cy.get('input[type="text"]')
         .should('be.visible')
@@ -23,6 +32,7 @@ describe('Search component', () => {
 
   it('renders with value and Search button', () => {
     const props = {
+      ...defaultProps,
       value: 'cypress.io'
     }
 
