@@ -47,8 +47,6 @@ describe('Table component', () => {
         .last()
         .should('contain', props.list[1].points)
 
-      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - before`)
-
       cy.get('span button')
         .contains('Points')
         .as('pointsHeader')
