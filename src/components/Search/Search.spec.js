@@ -4,7 +4,7 @@ import { mount } from '@cypress/react'
 import Search from './'
 
 describe('Search component', () => {
-  it('renders with a Search button', () => {
+  it('renders with a Search button', { tags: '@visual' }, function() {
     mount(<Search>Search</Search>)
 
     cy.get('input[type="text"]')
@@ -17,6 +17,8 @@ describe('Search component', () => {
     cy.get('button')
       .contains('Search')
       .should('be.visible')
+
+    cy.percySnapshot(this.test.title)
   })
 
   it('renders with value and Search button', () => {

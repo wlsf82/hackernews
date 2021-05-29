@@ -31,7 +31,7 @@ describe('App', () => {
     })
 
     it('dismisses one item', { tags: '@visual' }, function() {
-      cy.percySnapshot(`${this.test.title} - initial state`)
+      cy.percySnapshot(`${this.test.title} - before`)
       cy.get('button')
         .contains('Dismiss')
         .click()
@@ -39,7 +39,7 @@ describe('App', () => {
       cy.get('.table-row')
         .should('have.length', stories.list.length - 1)
 
-      cy.percySnapshot(`${this.test.title} - one story less`)
+      cy.percySnapshot(`${this.test.title} - after`)
     })
 
     it('loads more items', { tags: '@visual' }, function() {

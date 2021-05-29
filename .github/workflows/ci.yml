@@ -10,20 +10,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run Visual Component tests (App) 🧪
+      - name: Run component tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run ct
+
+      - name: Run visual 👀 tests 🧪
         uses: cypress-io/github-action@v2
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         with:
-          command: npm run cvt
-
-      - name: Run Component tests, but visual (App) 🧪
-        uses: cypress-io/github-action@v2
-        with:
           install: false
-          command: npm run ct
+          command: npm run vt
 
-      - name: Run E2E tests 🧪
+      - name: Run end-to-end tests 🧪
         uses: cypress-io/github-action@v2
         with:
           install: false

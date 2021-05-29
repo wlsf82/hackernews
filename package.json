@@ -19,7 +19,7 @@
     "ct": "cypress run-ct --env grepTags=-@visual",
     "cy:open": "cypress open",
     "cy:open-ct": "cypress open-ct",
-    "cvt": "percy exec -- cypress run-ct --spec src/components/App/App.spec.js"
+    "vt": "percy exec -- cypress run-ct --env grepTags=@visual"
   },
   "browserslist": {
     "production": [

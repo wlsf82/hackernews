@@ -24,7 +24,7 @@ describe('Table component', () => {
       .should('have.length', props.list.length)
   })
 
-  it('orders by points', () => {
+  it.only('orders by points', { tags: '@visual' }, function() {
     const props = require('../../../cypress/fixtures/stories')
 
     mount(<Table {...props} />)
@@ -36,12 +36,16 @@ describe('Table component', () => {
       .last()
       .should('contain', props.list[1].points)
 
+    cy.percySnapshot(`${this.test.title} - before`)
+
     cy.get('span button')
       .contains('Points')
       .as('pointsHeader')
       .should('not.have.class', 'button-active')
       .click()
       .should('have.class', 'button-active')
+
+    cy.percySnapshot(`${this.test.title} - order desc`)
 
     cy.get('.table-row')
       .first()
@@ -59,5 +63,7 @@ describe('Table component', () => {
     cy.get('.table-row')
       .last()
       .should('contain', props.list[1].points)
+
+    cy.percySnapshot(`${this.test.title} - order asc`)
   })
 })
