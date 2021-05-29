@@ -30,8 +30,8 @@ describe('App', () => {
         .should('have.length', stories.list.length)
     })
 
-    it('dismisses one item', { tags: '@visual' }, () => {
-      cy.percySnapshot('Initial state')
+    it('dismisses one item', { tags: '@visual' }, function() {
+      cy.percySnapshot(`${this.test.title} - initial state`)
       cy.get('button')
         .contains('Dismiss')
         .click()
@@ -39,10 +39,10 @@ describe('App', () => {
       cy.get('.table-row')
         .should('have.length', stories.list.length - 1)
 
-      cy.percySnapshot('One story less')
+      cy.percySnapshot(`${this.test.title} - one story less`)
     })
 
-    it('loads more items', { tags: '@visual' }, () => {
+    it('loads more items', { tags: '@visual' }, function() {
       cy.get('button')
         .contains('More')
         .click()
@@ -50,7 +50,7 @@ describe('App', () => {
       cy.get('.table-row')
         .should('have.length', stories.list.length * 2)
 
-      cy.percySnapshot('Loaded more')
+      cy.percySnapshot(this.test.title)
     })
   })
 
@@ -63,7 +63,7 @@ describe('App', () => {
       )
     })
 
-    it('fallsback on a network failure', { tags: '@visual' }, () => {
+    it('fallsback on a network failure', { tags: '@visual' }, function() {
       mount(<App />)
 
       cy.get('input[type="text"]')
@@ -74,7 +74,7 @@ describe('App', () => {
         .contains('Something went wrong.')
         .should('be.visible')
 
-      cy.percySnapshot('Fallback component')
+      cy.percySnapshot(this.test.title)
     })
   })
 })
