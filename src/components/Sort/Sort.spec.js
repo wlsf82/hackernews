@@ -16,7 +16,7 @@ describe('Sort component', () => {
       .should('not.have.class','button-active')
   })
 
-  it('renders active', { tags: '@visual' }, function() {
+  it('renders active', () => {
     const props = {
       sortKey: 'baz',
       activeSortKey: 'baz'
@@ -26,7 +26,5 @@ describe('Sort component', () => {
 
     cy.get('button')
       .should('have.class','button-active')
-
-    cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
   })
 })
