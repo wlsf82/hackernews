@@ -6,8 +6,8 @@ import Table from './'
 describe('Table component', () => {
   it('renders empty', { tags: '@visual' }, function() {
     const props = {
-      onClick: cy.stub().as('onClickHandler'),
-      onDismiss: cy.stub().as('onDismissHandler'),
+      onClick: cy.stub(),
+      onDismiss: cy.stub(),
       list: []
     }
 
@@ -24,8 +24,8 @@ describe('Table component', () => {
 
     beforeEach(() => {
       props = {
-        onClick: cy.stub().as('onClickHandler'),
-        onDismiss: cy.stub().as('onDismissHandler'),
+        onClick: cy.stub(),
+        onDismiss: cy.stub(),
         ...require('../../../cypress/fixtures/stories')
       }
 

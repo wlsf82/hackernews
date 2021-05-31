@@ -8,8 +8,8 @@ describe('Search component', () => {
 
   beforeEach(() => {
     defaultProps = {
-      onChange: cy.stub().as('onChangeHandler'),
-      onSubmit: cy.stub().as('onSubmitHandler')
+      onChange: cy.stub(),
+      onSubmit: cy.stub()
     }
   })
 
