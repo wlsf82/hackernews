@@ -38,8 +38,6 @@ describe('Table component', () => {
     })
 
     it('orders by points', { tags: '@visual' }, function() {
-      mount(<Table {...props} />)
-
       cy.get('.table-row')
         .first()
         .should('contain', props.list[0].points)
