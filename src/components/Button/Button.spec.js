@@ -12,18 +12,6 @@ describe('Button component', () => {
     }
   })
 
-  it('renders with proper className and content', () => {
-    mount(
-      <Button className="my-awesome-button" {...defaultProps}>
-        Hey, click me!
-      </Button>
-    )
-
-    cy.get('button')
-      .should('have.class', 'my-awesome-button')
-      .and('have.text', 'Hey, click me!')
-  })
-
   it('renders as an inline button', () => {
     mount(
       <Button className="button-inline" {...defaultProps}>
