@@ -17,8 +17,8 @@ describe('Search component', () => {
     mount(<Search {...defaultProps}>Search</Search>)
 
     cy.get('input[type="text"]')
-        .should('be.visible')
-        .blur()
+      .should('be.visible')
+      .blur()
 
     cy.get('input[type="text"]')
       .should('be.visible')
@@ -39,8 +39,8 @@ describe('Search component', () => {
     mount(<Search {...props}>Search</Search>)
 
     cy.get('input[type="text"]')
-        .should('be.visible')
-        .blur()
+      .should('be.visible')
+      .blur()
 
     cy.get('input[type="text"]')
       .should('be.visible')
