@@ -14,12 +14,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run e2e:ci && npm run ct",
-    "e2e": "cypress run --record",
+    "e2e": "cypress run --record --tag 'e2e'",
     "e2e:ci": "start-server-and-test http://localhost:3000 e2e",
-    "ct": "cypress run-ct --record --env grepTags=-@visual",
+    "ct": "cypress run-ct --record --tag 'component' --env grepTags=-@visual",
     "cy:open": "cypress open",
     "cy:open-ct": "cypress open-ct",
-    "vt": "percy exec -- cypress run-ct --record --env grepTags=@visual"
+    "vt": "percy exec -- cypress run-ct --record --tag 'component,visual' --env grepTags=@visual"
   },
   "browserslist": {
     "production": [
