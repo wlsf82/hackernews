@@ -4,10 +4,18 @@ import { mount } from '@cypress/react'
 import Table from './'
 
 describe('Table component', () => {
+  let defaultProps
+
+  beforeEach(() => {
+    defaultProps = {
+      onClick: cy.stub(),
+      onDismiss: cy.stub()
+    }
+  })
+
   it('renders empty', { tags: '@visual' }, function() {
     const props = {
-      onClick: cy.stub(),
-      onDismiss: cy.stub(),
+      ...defaultProps,
       list: []
     }
 
@@ -24,8 +32,7 @@ describe('Table component', () => {
 
     beforeEach(() => {
       props = {
-        onClick: cy.stub(),
-        onDismiss: cy.stub(),
+        ...defaultProps,
         ...require('../../../cypress/fixtures/stories')
       }
 
