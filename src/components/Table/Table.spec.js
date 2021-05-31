@@ -41,14 +41,17 @@ describe('Table component', () => {
       cy.get('.table-row')
         .first()
         .should('contain', props.list[0].points)
+        .and('be.visible')
       cy.get('.table-row')
         .last()
         .should('contain', props.list[1].points)
+        .and('be.visible')
 
       cy.get('span button')
         .contains('Points')
         .as('pointsHeader')
         .should('not.have.class', 'button-active')
+        .and('be.visible')
         .click()
         .should('have.class', 'button-active')
 

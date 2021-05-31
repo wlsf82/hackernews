@@ -47,6 +47,7 @@ describe('App', () => {
     it('dismisses one item', { tags: '@visual' }, function() {
       cy.get('button')
         .contains('Dismiss')
+        .should('be.visible')
         .click()
 
       cy.get('.table-row')
@@ -58,6 +59,7 @@ describe('App', () => {
     it('loads more items', { tags: '@visual' }, function() {
       cy.get('button')
         .contains('More')
+        .should('be.visible')
         .click()
 
       cy.get('.table-row')

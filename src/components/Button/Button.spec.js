@@ -22,6 +22,7 @@ describe('Button component', () => {
     cy.get('button')
       .should('have.class', 'button-inline')
       .and('have.text', 'Dismiss')
+      .and('be.visible')
   })
 
   it('triggers onClick event on click', () => {

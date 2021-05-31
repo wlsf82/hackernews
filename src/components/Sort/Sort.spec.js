@@ -13,7 +13,9 @@ describe('Sort component', () => {
     mount(<Sort {...props}>I'm not active</Sort>)
 
     cy.get('button')
+      .contains('I\'m not active')
       .should('not.have.class','button-active')
+      .and('be.visible')
   })
 
   it('renders active', () => {
@@ -25,6 +27,8 @@ describe('Sort component', () => {
     mount(<Sort {...props}>Yay! I'm active</Sort>)
 
     cy.get('button')
+      .contains('Yay! I\'m active')
       .should('have.class','button-active')
+      .and('be.visible')
   })
 })
