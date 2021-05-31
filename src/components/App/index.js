@@ -79,19 +79,19 @@ class App extends Component {
   }
 
   onDismiss(id) {
-    const { searchKey, results } = this.state;
-    const { hits, page } = results[searchKey];
+    // const { searchKey, results } = this.state;
+    // const { hits, page } = results[searchKey];
 
 
-    const isNotId = item => item.objectID !== id;
-    const updatedHits = hits.filter(isNotId);
+    // const isNotId = item => item.objectID !== id;
+    // const updatedHits = hits.filter(isNotId);
 
-    this.setState({
-      results: {
-        ...this.state.result,
-        [searchKey]: { hits: updatedHits, page },
-      }
-    });
+    // this.setState({
+    //   results: {
+    //     ...this.state.result,
+    //     [searchKey]: { hits: updatedHits, page },
+    //   }
+    // });
   }
 
   onSearchChange(event) {
