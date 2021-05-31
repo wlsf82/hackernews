@@ -1,4 +1,4 @@
-name: ci
+name: ci-cd
 
 on: [push]
 
@@ -33,3 +33,14 @@ jobs:
         with:
           install: false
           command: npm run e2e:ci
+  deploy:
+    needs: cypress-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.ORG_ID}}
+          vercel-project-id: ${{ secrets.PROJECT_ID}}
