@@ -52,14 +52,14 @@ describe('Table component', () => {
         .click()
         .should('have.class', 'button-active')
 
-      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - order desc`)
-
       cy.get('.table-row')
         .first()
         .should('contain', props.list[1].points)
       cy.get('.table-row')
         .last()
         .should('contain', props.list[0].points)
+
+      cy.percySnapshot(`${this.test.parent.parent.title} - ${this.test.parent.title} - ${this.test.title} - order desc`)
 
       cy.get('@pointsHeader')
         .click()
