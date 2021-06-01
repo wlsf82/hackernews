@@ -25,7 +25,7 @@ describe('Button component', () => {
       .and('be.visible')
   })
 
-  it('triggers onClick event on click', () => {
+  it('triggers onClick event', () => {
     mount(
       <Button {...defaultProps}>
         Click here
