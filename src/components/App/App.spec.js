@@ -70,15 +70,13 @@ describe('App', () => {
   })
 
   context('Failure path', () => {
-    beforeEach(() => {
+    it('fallsback on a network failure', { tags: '@visual' }, function() {
       cy.intercept(
         'GET',
         '**/search**',
         { forceNetworkError: true }
       )
-    })
 
-    it('fallsback on a network failure', { tags: '@visual' }, function() {
       mount(<App />)
 
       cy.get('input[type="text"]')
@@ -90,6 +88,20 @@ describe('App', () => {
         .should('be.visible')
 
       cy.percySnapshot(`${this.test.parent.title} - ${this.test.title}`)
+    })
+
+    it('fallsback on a server failure', () => {
+      cy.intercept(
+        'GET',
+        '**/search**',
+        { statusCode: 500 }
+      )
+
+      mount(<App />)
+
+      cy.get('p')
+        .contains('Something went wrong.')
+        .should('be.visible')
     })
   })
 })
