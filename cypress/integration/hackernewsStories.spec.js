@@ -22,5 +22,5 @@ describe('Hackernews Stories App', () => {
 
     cy.get('.table-row')
       .should('have.length', 100)
-  })  
+  })
 })
