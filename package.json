@@ -16,6 +16,7 @@
     "test": "npm run ct && npm run vt && npm run e2e:ci",
     "e2e": "cypress run --record --tag 'e2e'",
     "e2e:ci": "start-server-and-test http://localhost:3000 e2e",
+    "e2e:prod": "cypress run --record --tag 'e2e prod' --config baseUrl=https://hackernews-seven.vercel.app",
     "ct": "cypress run-ct --record --tag 'component' --env grepTags=-@visual",
     "cy:open": "cypress open",
     "cy:open-ct": "cypress open-ct",
