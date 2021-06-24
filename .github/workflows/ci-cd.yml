@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  cypress-tests:
+  pre-deployment-tests:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
@@ -37,7 +37,7 @@ jobs:
           install: false
           command: npm run e2e:ci
   deploy:
-    needs: cypress-tests
+    needs: pre-deployment-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -47,7 +47,7 @@ jobs:
           vercel-args: '--prod'
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-  prod-tests:
+  post-deployment-tests:
     needs: deploy
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
