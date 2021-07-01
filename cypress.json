@@ -6,5 +6,9 @@
     "testFiles": "**/*spec.{js,jsx,ts,tsx}",
     "viewportHight": 1200,
     "viewportWidth": 1000
+  },
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
   }
 }
