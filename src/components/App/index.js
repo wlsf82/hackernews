@@ -88,8 +88,8 @@ class App extends Component {
 
     this.setState({
       results: {
-        ...this.state.result,
-        [searchKey]: { hits: updatedHits, page },
+        // ...this.state.result,
+        // [searchKey]: { hits: updatedHits, page },
       }
     });
   }
