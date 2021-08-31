@@ -22,6 +22,7 @@
     "e2e:prod": "cypress run --record --tag 'e2e prod' --config baseUrl=https://hackernews-seven.vercel.app",
     "ct": "cypress run-ct --record --tag 'component' --env grepTags=-@visual",
     "cy:open": "cypress open",
+    "open:e2e:with:server": "start-server-and-test http://localhost:3000 cy:open",
     "cy:open-ct": "cypress open-ct",
     "vt": "percy exec -- cypress run-ct --record --tag 'component,visual' --env grepTags=@visual"
   },
