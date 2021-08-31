@@ -23,4 +23,12 @@ describe('Hackernews Stories App', () => {
     cy.get('.table-row')
       .should('have.length', 100)
   })
+
+  it('dismisses the first item', () => {
+    cy.contains('button', 'Dismiss').click()
+
+
+    cy.get('.table-row')
+      .should('have.length', 99)
+  })
 })
