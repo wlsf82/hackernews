@@ -1,6 +1,5 @@
 import '../../index.css'
 import * as React from 'react'
-import { mount } from '@cypress/react'
 import Button from './'
 
 describe('Button component', () => {
@@ -13,7 +12,7 @@ describe('Button component', () => {
   })
 
   it('renders as an inline button', () => {
-    mount(
+    cy.mount(
       <Button className="button-inline" {...defaultProps}>
         Dismiss
       </Button>
@@ -26,7 +25,7 @@ describe('Button component', () => {
   })
 
   it('triggers onClick event', () => {
-    mount(
+    cy.mount(
       <Button {...defaultProps}>
         Click here
       </Button>

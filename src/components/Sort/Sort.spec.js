@@ -1,6 +1,5 @@
 import '../../index.css'
 import * as React from 'react'
-import { mount } from '@cypress/react'
 import Sort from './'
 
 describe('Sort component', () => {
@@ -10,7 +9,7 @@ describe('Sort component', () => {
       activeSortKey: 'bar'
     }
 
-    mount(<Sort {...props}>I'm not active</Sort>)
+    cy.mount(<Sort {...props}>I'm not active</Sort>)
 
     cy.get('button')
       .contains('I\'m not active')
@@ -24,7 +23,7 @@ describe('Sort component', () => {
       activeSortKey: 'baz'
     }
 
-    mount(<Sort {...props}>Yay! I'm active</Sort>)
+    cy.mount(<Sort {...props}>Yay! I'm active</Sort>)
 
     cy.get('button')
       .contains('Yay! I\'m active')

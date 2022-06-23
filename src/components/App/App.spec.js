@@ -1,6 +1,5 @@
 import '../../index.css'
 import * as React from 'react'
-import { mount } from '@cypress/react'
 import App from './'
 
 describe('App', () => {
@@ -34,7 +33,7 @@ describe('App', () => {
         { body: pageTwoResBody }
       )
 
-      mount(<App />)
+      cy.mount(<App />)
 
       cy.get('input[type="text"]')
         .should('be.visible')
@@ -77,7 +76,7 @@ describe('App', () => {
         { forceNetworkError: true }
       )
 
-      mount(<App />)
+      cy.mount(<App />)
 
       cy.get('input[type="text"]')
         .should('be.visible')
@@ -97,7 +96,7 @@ describe('App', () => {
         { statusCode: 500 }
       )
 
-      mount(<App />)
+      cy.mount(<App />)
 
       cy.get('p')
         .contains('Something went wrong.')
