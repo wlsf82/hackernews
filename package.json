@@ -22,18 +22,11 @@
     "cy:open-ct": "cypress open-ct",
     "vt": "percy exec -- cypress run-ct --record --tag 'component,visual' --env grepTags=@visual"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ],
   "devDependencies": {
     "@cypress/react": "^5.8.1",
     "@cypress/webpack-dev-server": "^1.3.1",
