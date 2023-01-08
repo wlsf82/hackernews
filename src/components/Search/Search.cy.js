@@ -1,6 +1,4 @@
 import '../../index.css'
-import * as React from 'react'
-import { mount } from '@cypress/react'
 import Search from './'
 
 describe('Search component', () => {
@@ -14,7 +12,7 @@ describe('Search component', () => {
   })
 
   it('renders with a Search button', { tags: '@visual' }, function() {
-    mount(<Search {...defaultProps}>Search</Search>)
+    cy.mount(<Search {...defaultProps}>Search</Search>)
 
     cy.get('input[type="text"]')
       .should('be.visible')
@@ -36,7 +34,7 @@ describe('Search component', () => {
       value: 'cypress.io'
     }
 
-    mount(<Search {...props}>Search</Search>)
+    cy.mount(<Search {...props}>Search</Search>)
 
     cy.get('input[type="text"]')
       .should('be.visible')

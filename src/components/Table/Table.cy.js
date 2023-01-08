@@ -1,6 +1,4 @@
 import '../../index.css'
-import * as React from 'react'
-import { mount } from '@cypress/react'
 import Table from './'
 
 describe('Table component', () => {
@@ -19,7 +17,7 @@ describe('Table component', () => {
       list: []
     }
 
-    mount(<Table {...props} />)
+    cy.mount(<Table {...props} />)
 
     cy.get('.table-row')
       .should('not.exist')
@@ -36,7 +34,7 @@ describe('Table component', () => {
         ...require('../../../cypress/fixtures/stories')
       }
 
-      mount(<Table {...props} />)
+      cy.mount(<Table {...props} />)
     })
 
     it('renders with some items', () => {

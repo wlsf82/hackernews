@@ -17,10 +17,9 @@
     "e2e": "cypress run --record --tag 'e2e'",
     "e2e:ci": "start-server-and-test http://localhost:3000 e2e",
     "e2e:prod": "cypress run --record --tag 'e2e prod' --config baseUrl=https://hackernews-seven.vercel.app",
-    "ct": "cypress run-ct --record --tag 'component' --env grepTags=-@visual",
+    "ct": "cypress run --component --record --tag 'component' --env grepTags=-@visual",
     "cy:open": "cypress open",
-    "cy:open-ct": "cypress open-ct",
-    "vt": "percy exec -- cypress run-ct --record --tag 'component,visual' --env grepTags=@visual"
+    "vt": "percy exec -- cypress run --component --record --tag 'component,visual' --env grepTags=@visual"
   },
   "browserslist": [
     "last 1 version",
@@ -28,13 +27,10 @@
     "not dead"
   ],
   "devDependencies": {
-    "@cypress/react": "^5.8.1",
-    "@cypress/webpack-dev-server": "^1.3.1",
-    "@percy/cli": "^1.0.0-beta.52",
-    "@percy/cypress": "^3.1.0",
-    "cypress": "^8.3.1",
-    "cypress-grep": "^2.4.0",
-    "start-server-and-test": "^1.12.3",
-    "webpack-dev-server": "^3.11.1"
+    "@cypress/grep": "^3.1.3",
+    "@percy/cli": "^1.16.0",
+    "@percy/cypress": "^3.1.2",
+    "cypress": "^12.3.0",
+    "start-server-and-test": "^1.15.2"
   }
 }
