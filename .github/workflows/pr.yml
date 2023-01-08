@@ -8,17 +8,17 @@ jobs:
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Run component tests 🧪
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           command: npm run ct
 
       - name: Run visual 👀 tests 🧪
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
           command: npm run vt
 
       - name: Run end-to-end tests 🧪
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
