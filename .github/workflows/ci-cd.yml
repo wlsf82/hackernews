@@ -34,7 +34,9 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           install: false
-          command: npm run e2e:ci
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          command: npm run e2e
   deploy:
     needs: pre-deployment-tests
     runs-on: ubuntu-latest
