@@ -25,10 +25,10 @@
     "not dead"
   ],
   "devDependencies": {
-    "@cypress/grep": "^3.1.5",
-    "@percy/cli": "^1.27.1",
+    "@cypress/grep": "^4.0.1",
+    "@percy/cli": "^1.27.6",
     "@percy/cypress": "^3.1.2",
-    "cypress": "^13.1.0",
-    "start-server-and-test": "^2.0.0"
+    "cypress": "^13.6.2",
+    "start-server-and-test": "^2.0.3"
   }
 }
