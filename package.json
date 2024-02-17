@@ -2,7 +2,7 @@
   "name": "hackernews",
   "version": "0.1.0",
   "dependencies": {
-    "axios": "^1.5.0",
+    "axios": "^1.6.7",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
@@ -26,9 +26,9 @@
   ],
   "devDependencies": {
     "@cypress/grep": "^4.0.1",
-    "@percy/cli": "^1.27.6",
+    "@percy/cli": "^1.28.0",
     "@percy/cypress": "^3.1.2",
-    "cypress": "^13.6.2",
+    "cypress": "^13.6.4",
     "start-server-and-test": "^2.0.3"
   }
 }
