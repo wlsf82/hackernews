@@ -26,9 +26,9 @@
   ],
   "devDependencies": {
     "@cypress/grep": "^4.0.1",
-    "@percy/cli": "^1.28.0",
+    "@percy/cli": "^1.28.2",
     "@percy/cypress": "^3.1.2",
-    "cypress": "^13.6.4",
+    "cypress": "^13.7.0",
     "start-server-and-test": "^2.0.3"
   }
 }
