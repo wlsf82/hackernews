@@ -2,7 +2,7 @@
   "name": "hackernews",
   "version": "0.1.0",
   "dependencies": {
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
