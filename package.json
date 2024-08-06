@@ -13,6 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "mocks": "mocks-server",
+    "mocks:ci": "mocks-server --no-plugins.inquirerCli.enabled",
     "e2e": "cypress run --record --tag 'e2e'",
     "e2e:prod": "cypress run --record --tag 'e2e prod' --config baseUrl=https://hackernews-seven.vercel.app",
     "ct": "cypress run --component --record --tag 'component' --env grepTags=-@visual",
@@ -26,6 +28,8 @@
   ],
   "devDependencies": {
     "@cypress/grep": "^4.1.0",
+    "@mocks-server/cypress-commands": "^6.1.1",
+    "@mocks-server/main": "^4.1.0",
     "@percy/cli": "^1.29.1",
     "@percy/cypress": "^3.1.3-beta.0",
     "cypress": "^13.13.2",

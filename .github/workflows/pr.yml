@@ -31,6 +31,6 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           install: false
-          start: npm start
+          start: npm run mocks:ci, npm start
           wait-on: 'http://localhost:3000'
           command: npm run e2e
